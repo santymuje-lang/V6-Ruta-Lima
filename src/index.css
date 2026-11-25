@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "maplibre-gl/dist/maplibre-gl.css";
+
+/* App Full Height & Safe Areas for Android */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  touch-action: pan-x pan-y;
+  -webkit-font-smoothing: antialiased;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.top-navigation-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 12px 0 12px;
+  pointer-events: none;
+}
+
+.bottom-trip-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* Ensure MapLibre container & canvas fill 100% without dark edges */
+.maplibregl-map,
+.maplibregl-canvas-container,
+.maplibregl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.maplibregl-popup-content {
+  padding: 6px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
+}
+
+.maplibregl-popup-close-button {
+  font-size: 16px;
+  padding: 4px 8px;
+  color: #475569;
+}
+
+
+
+/* Custom styling for vehicle marker */
+.vehicle-nav-marker {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  transform-origin: center center !important;
+}
+
+.dest-pin-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.alert-map-marker {
+  background: transparent !important;
+  border: none !important;
+  transition: opacity 200ms ease-out;
+}
+
+.fixed-radar-marker {
+  background: transparent !important;
+  border: none !important;
+  transition: opacity 200ms ease-out;
+}
+
+.route-time-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.poi-map-marker {
+  background: transparent !important;
+  border: none !important;
+  z-index: 5;
+}
+
+/* Hide scrollbar for category pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Modo oscuro aplicado exclusivamente a las teselas raster de Leaflet */
+.leaflet-dark-mode,
+.leaflet-dark-mode-fallback {
+  filter: invert(100%) hue-rotate(180deg) brightness(0.9) contrast(0.9) !important;
+}
+
+@keyframes inspectorGentlePulse {
+  0%, 70%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.7);
+  }
+  82% {
+    transform: scale(1.07);
+    box-shadow: 0 0 22px rgba(251, 146, 60, 0.95);
+  }
+  92% {
+    transform: scale(1);
+    box-shadow: 0 0 14px rgba(249, 115, 22, 0.75);
+  }
+}
+
+.animate-inspector-pulse {
+  animation: inspectorGentlePulse 4s ease-in-out infinite;
+}
+
+@keyframes routeHazardButtonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.9), 0 0 14px rgba(239, 68, 68, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 1), 0 0 24px rgba(239, 68, 68, 0.8);
+  }
+}
+
+.animate-route-hazard-btn {
+  animation: routeHazardButtonPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes clearRouteCheckDraw {
+  0% {
+    stroke-dashoffset: 36;
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  21% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  27% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+  82% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-clear-route-check {
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  transform-origin: center;
+  animation: clearRouteCheckDraw 1.95s ease-in-out forwards;
+}
+
+
+

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es" class="h-full w-full overflow-hidden select-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>RUTA LIMA - GPS & Navegación en Tiempo Real</title>
+    <meta name="description" content="Aplicación web profesional de navegación GPS en tiempo real para Lima, Perú optimizada para conducción móvil." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ruta Lima" />
+    <meta property="og:title" content="RUTA LIMA - GPS & Navegación en Tiempo Real" />
+    <meta property="og:description" content="Aplicación web profesional de navegación GPS en tiempo real para Lima, Perú optimizada para conducción móvil." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Preconnect to map tile and routing servers -->
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link rel="preconnect" href="https://router.project-osrm.org" />
+    <link rel="preconnect" href="https://nominatim.openstreetmap.org" />
+  </head>
+  <body class="h-full w-full overflow-hidden bg-slate-950 text-slate-100 antialiased font-sans">
+    <div id="root" class="h-full w-full overflow-hidden"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,8 @@
+{
+  "name": "RUTA LIMA",
+  "description": "Aplicación web profesional de navegación GPS en tiempo real para Lima, Perú optimizada para conducción móvil.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}
